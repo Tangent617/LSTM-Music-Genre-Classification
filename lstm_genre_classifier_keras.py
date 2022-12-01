@@ -84,7 +84,9 @@ print("Build LSTM RNN model ...")
 model = Sequential()
 
 model.add(LSTM(units=128, dropout=0.05, recurrent_dropout=0.35, return_sequences=True, input_shape=input_shape))
-model.add(LSTM(units=32,  dropout=0.05, recurrent_dropout=0.35, return_sequences=False))
+model.add(LSTM(units=32,  dropout=0.05, recurrent_dropout=0.35, return_sequences=True))#return_sequences=True if you have mor elayers
+model.add(LSTM(units=32,  dropout=0.05, recurrent_dropout=0.35, return_sequences=True))#added
+model.add(LSTM(units=32,  dropout=0.05, recurrent_dropout=0.35, return_sequences=False))#added
 model.add(Dense(units=genre_features.train_Y.shape[1], activation="softmax"))
 
 print("Compiling ...")
