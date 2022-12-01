@@ -44,7 +44,7 @@
 import logging
 import os
 from keras.models import Sequential
-from keras.layers.recurrent import LSTM
+from keras.layers import LSTM
 from keras.layers import Dense
 from keras.optimizers import Adam
 
@@ -130,3 +130,13 @@ print("creating .json file....")
 model_json = model.to_json()
 f = Path("./lstm_genre_classifier_lstm.json")
 f.write_text(model_json)
+
+'''
+# serialize model to JSON, this is to reflect the modle you create
+model_json = model.to_json()
+with open("model.json", "w") as json_file:
+    json_file.write(model_json)
+# # serialize weights to HDF5
+# model.save_weights(“model.h5”)
+print("Saved model model_json to disk")
+'''
