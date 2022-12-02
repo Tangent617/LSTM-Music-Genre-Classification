@@ -13,7 +13,7 @@
      python3 predict_example.py path/to/custom/file.mp3
  or to test the model on our custom files, run
 
-     python3 predict_example.py audio/breathe.mp3
+     python3 predict_example.py audio/breathe.00020.au
 
 ### Audio features extracted
  * [MFCC](https://en.wikipedia.org/wiki/Mel-frequency_cepstrum)
