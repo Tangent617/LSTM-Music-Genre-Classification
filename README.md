@@ -41,7 +41,7 @@
 
 ### Accuracy
 
- At Epoch 128, training on a Persistence-M GPU (November 2022):
+ At Epoch 128, training on a Tesla T4 GPU (November 2022):
 
 |  | **Loss**  | **Accuracy** | 
 | ----- | ---- | ----- |
