@@ -47,6 +47,7 @@ from keras.models import Sequential
 from keras.layers import LSTM
 from keras.layers import Dense
 from keras.optimizers import Adam
+from keras.callbacks import EarlyStopping, ReduceLROnPlateau
 
 from GenreFeatureData import (
     GenreFeatureData,
@@ -97,6 +98,14 @@ opt = Adam()
 model.compile(loss="categorical_crossentropy", optimizer=opt, metrics=["accuracy"])
 model.summary()
 
+earlystop=EarlyStopping(patience=20)
+learning_rate_reduction=ReduceLROnPlateau(
+    monitor='val_acc',
+    patience= 3,
+    verbose=1,
+)
+callbacks = [earlystop, learning_rate_reduction]
+
 print("Training ...")
 batch_size = 35  # num of training examples per minibatch
 num_epochs = 400
@@ -106,6 +115,7 @@ model.fit(
     batch_size=batch_size,
     epochs=num_epochs,
     validation_data=(genre_features.dev_X, genre_features.dev_Y),
+    callbacks=callbacks,
 )
 
 print("\nValidating ...")
