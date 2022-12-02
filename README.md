@@ -13,7 +13,7 @@
      python3 predict_example.py path/to/custom/file.mp3
  or to test the model on our custom files, run
 
-     python3 predict_example.py audio/classical_music.mp3
+     python3 predict_example.py audio/breathe.mp3
 
 ### Audio features extracted
  * [MFCC](https://en.wikipedia.org/wiki/Mel-frequency_cepstrum)
@@ -41,19 +41,10 @@
 
 ### Accuracy
 
- At Epoch 400, training on a TITAN X GPU (October 2017):
+ At Epoch 128, training on a Persistence-M GPU (November 2022):
 
 |  | **Loss**  | **Accuracy** | 
 | ----- | ---- | ----- |
-| Training   | `0.5801`          | `0.7810`        |
-| Validation | `0.734523485104`  | `0.766666688025` |
-| Testing    | `0.900845060746`  | `0.683333342274` |
-
-
- At Epoch 400, training on a 2018 Macbook Pro CPU (May 2019):
-
-|  | **Loss**  | **Accuracy** | 
-| ----- | ---- | ----- |
-| Training   | `0.3486`          | `0.8738`        |
-| Validation | `1.028421084086`  | `0.700000017881` |
-| Testing    | `1.209656755129`  | `0.683333347241` |
+| Training   | `0.8285`          | `0.6800`        |
+| Validation | `1.0479252338409424`  | `0.6000000238418579` |
+| Testing    | `0.7570146322250366`  | `0.7200000286102295` |
